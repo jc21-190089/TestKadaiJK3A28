@@ -16,15 +16,8 @@ namespace WindowsFormsApp1
             int[] start = new int[] {0,1,2,3,4,2,5,4,6 };
             int[] end = new int[] {0,2,3,4,1,5,4,6,2 };
 
-            //int[] edgefirst = new int[]{ 0, 1, 2, 3, 4, 6, 8 };
-            //int[] edgenext = new int[] { 0, 0, 5, 0, 7, 0, 0, 0, 0 };//動作確認済み、
-            //↓↓
-           /* int[] fcopy = new int[f.Length];
-            Array.Copy(f, fcopy, f.Length);
 
-            int[] ncopy = new int[n.Length];
-            Array.Copy(n, ncopy, n.Length);*/
-
+            //↓↓配列の複製↓↓
             int[] edgefirst = new int[N + 1];
             int[] edgenext = new int[M + 1];
 
@@ -39,7 +32,7 @@ namespace WindowsFormsApp1
             {
                 edgenext[w] = n[w-1];//edgenext[w] = ncopy[w-1];
             }
-            //↑↑
+            //↑↑配列の複製↑↑
             
 
             int[] current = new int[N+1];//配列currentの作成
@@ -52,7 +45,7 @@ namespace WindowsFormsApp1
             }
             top = 1;
             last = M ;
-            x = 1;
+            x = s;//出発点の設定
             while(last>=1)
             {
                 if (current[x] != 0)
